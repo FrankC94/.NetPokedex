@@ -1,16 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace DotNetPokedex.Controllers
 {
     public class PokedexController : Controller
     {
-        public string Detail()
+        public ActionResult Detail()
         {
-            return "Hello from the Pokedex Controller";
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Friday)
+            {
+                return Redirect("/");
+                
+            }
+            return Content("Hello from the Pokedex Controller");
+           
         }
     }
 }
