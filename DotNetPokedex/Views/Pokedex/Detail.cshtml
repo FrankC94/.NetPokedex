@@ -24,13 +24,26 @@
 </head>
 <body>
     <div>
-    <h1>@pokemonName</h1>
-     <h2>Pokemon #@pokemonNumber</h2>
+        <h1>@pokemonName</h1>
+        <h2>Pokemon #@pokemonNumber</h2>
         <h5>Description:</h5>
         <div>@Html.Raw(description)</div>
 
-        <h5>Details:</h5>
-        <div>@details</div>
+        @if (details.Length>0)
+        {
+            <h5>Details:</h5>
+            <div>
+                <ul>
+                    @foreach (var detail in details)
+                    {
+                        <li>@detail</li>
+
+                    }
+                </ul>
+            </div>
+        }
+
+
     </div>
 </body>
 </html>
