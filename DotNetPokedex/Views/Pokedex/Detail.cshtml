@@ -1,38 +1,30 @@
 ﻿@{
-    Layout = null;
-    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Pokemon Detail";
 
 }
 
 <!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
+
+<h1>@ViewBag.PokemonName</h1>
+<h2>Pokemon #@ViewBag.PokemonNumber</h2>
+<h5>Description:</h5>
+<div>@Html.Raw(@ViewBag.Description)</div>
+
+@if (@ViewBag.Details.Length>0)
+{
+    <h5>Details:</h5>
     <div>
-        <h1>@ViewBag.PokemonName</h1>
-        <h2>Pokemon #@ViewBag.PokemonNumber</h2>
-        <h5>Description:</h5>
-        <div>@Html.Raw(@ViewBag.Description)</div>
+        <ul>
+            @foreach (var detail in ViewBag.Details)
+            {
+                <li>@detail</li>
 
-        @if (@ViewBag.Details.Length>0)
-        {
-            <h5>Details:</h5>
-            <div>
-                <ul>
-                    @foreach (var detail in ViewBag.Details)
-                    {
-                        <li>@detail</li>
-
-                    }
-                </ul>
-            </div>
-        }
-
-
+            }
+        </ul>
     </div>
-</body>
-</html>
+}
+
+
+ 
