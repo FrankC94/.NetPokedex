@@ -1,25 +1,26 @@
-﻿@{
+﻿@model DotNetPokedex.Models.Pokemon
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Pokemon Detail";
+    ViewBag.Title = Model.DisplayText;
 
 }
 
 <!DOCTYPE html>
 
 
-<h1>@ViewBag.PokemonName</h1>
-<h2>Pokemon #@ViewBag.PokemonNumber</h2>
+<h1>@Model.PokemonName</h1>
+<h2>Pokemon #@Model.PokemonNumber</h2>
 <h5>Description:</h5>
-<div>@Html.Raw(@ViewBag.Description)</div>
+<div>@Html.Raw(@Model.DescriptionHtml)</div>
 
-@if (@ViewBag.Details.Length>0)
+@if (@Model.Stats.Length>0)
 {
-    <h5>Details:</h5>
+    <h5>Stats:</h5>
     <div>
         <ul>
-            @foreach (var detail in ViewBag.Details)
+            @foreach (var stat in Model.Stats)
             {
-                <li>@detail</li>
+                <li>@stat.Ability: @stat.Weakness:</li>
 
             }
         </ul>

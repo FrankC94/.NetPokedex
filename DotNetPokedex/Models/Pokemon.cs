@@ -6,7 +6,7 @@
         public string PokemonName { get; set; }
         public int PokemonNumber { get; set; }
         public string DescriptionHtml { get; set; }
-        public ElementType[] ElementType { get; set; }
+        public Stat[] Stats { get; set; }
         public bool Favorite { get; set; }
 
 
@@ -16,8 +16,9 @@
             {
                 return PokemonName + " #" + PokemonNumber;
             }
+        }
 
-            public string CoverImageFileName
+        public string CoverImageFileName
         {
             get
             {
@@ -26,5 +27,4 @@
             }
         }
     }
-}
 }
