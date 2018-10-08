@@ -8,5 +8,23 @@
         public string DescriptionHtml { get; set; }
         public ElementType[] ElementType { get; set; }
         public bool Favorite { get; set; }
+
+
+        public string DisplayText
+        {
+            get
+            {
+                return PokemonName + " #" + PokemonNumber;
+            }
+
+            public string CoverImageFileName
+        {
+            get
+            {
+                return PokemonName.Replace(" ", "-")
+                    .ToLower() + "-" + PokemonNumber + ".jpg";
+            }
+        }
     }
+}
 }
