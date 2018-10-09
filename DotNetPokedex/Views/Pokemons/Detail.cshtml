@@ -1,7 +1,7 @@
 ﻿@model DotNetPokedex.Models.Pokemon
 
 @{
-    ;
+    
     ViewBag.Title = Model.DisplayText;
 
 }
@@ -30,8 +30,8 @@
         <h5>Description:</h5>
         <div>@Html.Raw(@Model.DescriptionHtml)</div>
         <div class="col-md-6">
-            <img src="~/Images/pikachu025.png"
-                 alt="Pikachu" class="img-responsive" />
+            <img src="~/Images/@Model.CoverImageFileName"
+                 alt="@Model.DisplayText" class="img-responsive" />
         </div>
     </div>
 
