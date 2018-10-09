@@ -18,13 +18,10 @@
             }
         }
 
-        public string CoverImageFileName
+        public string GetCoverImageFileName()
         {
-            get
-            {
-                return PokemonName.Replace(" ", "-")
-                    .ToLower() + "-" + PokemonNumber + ".jpg";
-            }
+            return PokemonName.Replace(" ", "-")
+                .ToLower() + "-" + PokemonNumber + ".jpg";
         }
     }
 }

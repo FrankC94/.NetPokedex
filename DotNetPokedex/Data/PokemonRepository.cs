@@ -4,7 +4,7 @@ namespace DotNetPokedex.Data
 {
     public class PokemonRepository
     {
-        private static readonly Pokemon[] _pokemons = new Pokemon[]
+        private static Pokemon[] _pokemons = new Pokemon[]
         {
             new Pokemon()
             {
