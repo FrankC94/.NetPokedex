@@ -5,27 +5,35 @@
 
 }
 
-<!DOCTYPE html>
 
 
-<h1>@Model.PokemonName</h1>
-<h2>Pokemon #@Model.PokemonNumber</h2>
-<h5>Description:</h5>
-<div>@Html.Raw(@Model.DescriptionHtml)</div>
-
-@if (@Model.Stats.Length>0)
-{
-    <h5>Stats:</h5>
-    <div>
-        <ul>
-            @foreach (var stat in Model.Stats)
+<div class="row">
+    <div class="col-md-6">
+        <div class="well">
+            <h5><label>Pokemon:</label> @Model.PokemonName</h5>
+            <h5><label>Pokemon #:</label> @Model.PokemonNumber</h5>
+            <h5><label>Favorite:</label> @(Model.Favorite ? "Yes" : "No")</h5>
+            @if (@Model.Stats.Length > 0)
             {
-                <li>@stat.Ability: @stat.Weakness:</li>
+                <h5>Stats:</h5> 
+                <div>
+                    <ul>
+                        @foreach (var stat in Model.Stats)
+                        {
+                            <li>@stat.Ability </li>
+                            <li>@stat.Weakness </li>
 
+                        }
+                    </ul>
+                </div>
             }
-        </ul>
+        </div>
+        <h5>Description:</h5>
+        <div>@Html.Raw(@Model.DescriptionHtml)</div>
+        <div class="col-md-6">
+            <img src="~/Images/pikachu025.png"
+                 alt="Pikachu" class="img-responsive" />
+        </div>
     </div>
-}
 
-
- 
+</div>
