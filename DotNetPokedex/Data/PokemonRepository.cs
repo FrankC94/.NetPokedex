@@ -54,6 +54,11 @@ namespace DotNetPokedex.Data
 
          };
 
+        public Pokemon[] GetPokemons()
+        {
+            return _pokemons;
+        }
+
         public Pokemon GetPokemon(int id)
         {
             Pokemon pokemonToReturn = null;

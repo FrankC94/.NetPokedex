@@ -12,6 +12,13 @@ namespace DotNetPokedex.Controllers
             _pokemonRepository = new PokemonRepository();
         }
 
+        public ActionResult Index()
+        {
+            var pokemons = _pokemonRepository.GetPokemons();
+
+            return View(pokemons);
+        }
+
         public ActionResult Detail(int? id)
         {
             if (id == null)
